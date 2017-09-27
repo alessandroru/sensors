@@ -9,13 +9,13 @@
     function translateConfig(triSettingsProvider, triRouteProvider) {
         var now = new Date();
         // set app name & logo (used in loader, sidemenu, footer, login pages, etc)
-        triSettingsProvider.setName('triangular');
-        triSettingsProvider.setCopyright('&copy;' + now.getFullYear() + ' oxygenna.com');
+        triSettingsProvider.setName('Aegis 2K');
+        triSettingsProvider.setCopyright('&copy;' + now.getFullYear() + ' Aegis 2K');
         triSettingsProvider.setLogo('assets/images/logo.png');
         // set current version of app (shown in footer)
-        triSettingsProvider.setVersion('2.13.2');
+        triSettingsProvider.setVersion('1.0.0');
         // set the document title that appears on the browser tab
-        triRouteProvider.setTitle('Triangular');
+        triRouteProvider.setTitle('Aegis 2K');
         triRouteProvider.setSeparator('|');
     }
 })();

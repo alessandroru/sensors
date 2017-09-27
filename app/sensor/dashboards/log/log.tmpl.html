@@ -1,0 +1,48 @@
+<div class="sales-dashboard">
+    <md-tabs class="md-primary md-dynamic-height" md-selected="selectedTabIndex" md-stretch-tabs="always">
+
+        <md-tab label="Accelerometer">
+            <md-content class="md-padding">
+
+                <!--<tri-widget chartjs-line-widget title="Accelerometer" palette-background="triCyan:800" class="padding-left-40 padding-right-40 padding-top-20 padding-bottom-20 no-shadow">-->
+
+                    <!--<canvas class="chart-line" chart-data="vm.chartLineDataAc.data" chart-labels="vm.chartLineDataAc.labels" chart-series="vm.chartLineDataAc.series" chart-options="vm.chartLineDataAc.options" chart-colours="vm.chartLineDataAc.colors" chart-legend="true"></canvas>-->
+
+                    <canvas flex class="chart-line" chart-data="serverCharts.bandwidth.data" chart-labels="serverCharts.bandwidth.labels" chart-legend="false" chart-options="serverCharts.bandwidth.options" chart-colours="serverCharts.bandwidth.colours"></canvas>
+
+                <!--</tri-widget>-->
+
+            </md-content>
+        </md-tab>
+
+
+        <md-tab label="Gyroscope">
+            <md-content class="md-padding">
+                <tri-widget chartjs-line-widget title="Gyroscope" palette-background="triCyan:800" class="padding-left-40 padding-right-40 padding-top-20 padding-bottom-20 no-shadow">
+
+                    <canvas height="300" class="chart-line" chart-data="vm.chartLineDataGy.data" chart-labels="vm.chartLineDataGy.labels" chart-series="vm.chartLineDataGy.series" chart-options="vm.chartLineDataGy.options" chart-colours="vm.chartLineDataGy.colors"></canvas>
+
+                </tri-widget>
+
+            </md-content>
+        </md-tab>
+
+        <md-tab label="Magnetometer">
+            <md-content class="md-padding">
+
+                <tri-widget chartjs-line-widget title="Magnetometer" palette-background="triCyan:800" class="padding-left-40 padding-right-40 padding-top-20 padding-bottom-20 no-shadow">
+                    <canvas height="300" class="chart-line" chart-data="vm.chartLineDataMa.data" chart-labels="vm.chartLineDataMa.labels" chart-series="vm.chartLineDataMa.series" chart-options="vm.chartLineDataMa.options" chart-colours="vm.chartLineDataMa.colors"></canvas>
+                </tri-widget>
+            </md-content>
+        </md-tab>
+        <md-tab label="Thermometer">
+            <md-content class="md-padding">
+                <tri-widget chartjs-line-widget title="Thermometer" palette-background="triCyan:800" class="padding-left-40 padding-right-40 padding-top-20 padding-bottom-20 no-shadow">
+                    <canvas height="300" class="chart-line" chart-data="vm.chartLineDataTh.data" chart-labels="vm.chartLineDataTh.labels" chart-series="vm.chartLineDataTh.series" chart-options="vm.chartLineDataTh.options" chart-colours="vm.chartLineDataTh.colors"></canvas>
+                </tri-widget>
+            </md-content>
+        </md-tab>
+
+    </md-tabs>
+
+</div>

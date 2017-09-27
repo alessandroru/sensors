@@ -1,0 +1,24 @@
+<md-dialog class="order-dialog mobile-fullwidth-dialog" flex="30" flex-xs="100">
+
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2 flex >
+                <span translate>Confirm delete session #</span><span>{{vm.order.id}}</span>
+            </h2>
+            <md-button class="md-icon-button" ng-click="vm.cancelClick()" aria-label="cancel">
+                <md-icon md-font-icon="zmdi zmdi-close"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content class="md-dialog-content">
+        <p>Do you want to delete the session?</p>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+        <span flex></span>
+        <md-button ng-click="vm.deleteClick()" class="md-primary"  translate="DELETE"></md-button>
+        <md-button ng-click="vm.cancelClick()" class="md-primary" aria-label="{{Ok | triTranslate}}" translate="CLOSE"></md-button>
+    </md-dialog-actions>
+
+</md-dialog>

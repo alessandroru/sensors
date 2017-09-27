@@ -3,19 +3,21 @@
 
     angular
         .module('app.sensor.dashboards')
-        .controller('DateChangeDialogController', DateChangeDialogController);
+        .controller('SalesOrderDialogController', SalesOrderDialogController);
 
     /* @ngInject */
-    function DateChangeDialogController($mdDialog, range) {
+    function SalesOrderDialogController($window, $mdDialog, order) {
         var vm = this;
         vm.cancelClick = cancelClick;
         vm.okClick = okClick;
+        vm.order = order;
+        vm.printClick = printClick;
+
+
 
         ////////////////
 
         function okClick() {
-            range.start = new moment(vm.start);
-            range.end = new moment(vm.end);
             $mdDialog.hide();
         }
 
@@ -23,9 +25,10 @@
             $mdDialog.cancel();
         }
 
-        // init
+        function printClick() {
+            $window.print();
+        }
 
-        vm.start = range.start.toDate();
-        vm.end = range.end.toDate();
+
     }
 })();

@@ -1,0 +1,40 @@
+<md-dialog class="order-dialog mobile-fullwidth-dialog" flex="60" flex-xs="100">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2 flex >
+                <span translate>New session </span></span>
+            </h2>
+            <md-button class="md-icon-button" ng-click="vm.cancelClick()" aria-label="cancel">
+                <md-icon md-font-icon="zmdi zmdi-close"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content class="md-dialog-content">
+        <div flex layout="row" class="margin-bottom-10 container_new_session">
+
+            <md-input-container class="md-block">
+                <label>Title</label>
+                <input type="text" ng-model="vm.session.title">
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Description</label>
+                <textarea ng-model="vm.session.description"></textarea>
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label>Location</label>
+                <input type="text" ng-model="vm.session.location">
+            </md-input-container>
+
+
+        </div>
+
+
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+        <span flex></span>
+        <md-button ng-click="vm.startSession()" class="md-primary" aria-label="{{Start | triTranslate}}" translate="Start"></md-button>
+    </md-dialog-actions>
+</md-dialog>

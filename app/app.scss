@@ -17,6 +17,45 @@ button, select, html, textarea, input {
 @import "scss/material-backgrounds";
 
 // Add your CSS here
+.md-toolbar-tools {
+  background-color: rgb(156, 39, 176);
+}
+
+.img_logo_toolbar{
+  width: 200px;
+}
+
+table.md-table .delete_log_cell, table.md-table .export_log_cell{
+  padding: 0;
+  width: 1%;
+}
+
+.container_new_session{
+  display: block;
+}
+
+
+.container_new_session .md-block{
+  display: block;
+}
+
+
+.md-tab{
+  background-color: #fff!important;
+  color: #000!important;
+}
+.md-tab.md-active{
+  color:rgb(156, 39, 176)!important;
+}
+
+.zmdi-fullscreen{
+  color:#fff;
+}
+
+button.md-white-purple-theme{
+  color:#fff;
+}
+
 
 /**
  *  Do not remove this comments bellow. It's the markers used by gulp-inject to inject

@@ -71,33 +71,42 @@
             controller: 'DashboardSocialController',
             controllerAs: 'vm'
         })
-        .state('triangular.dashboard-sales', {
-            url: '/dashboards/sales',
+        .state('triangular.dashboard-logs', {
+            url: '/dashboards/logs',
             data: {
                 layout: {
-                    showToolbar: false
+                    showToolbar: true
                 }
             },
             views: {
                 '': {
-                    templateUrl: 'app/sensor/dashboards/sales/dashboard-sales.tmpl.html',
+                    templateUrl: 'app/sensor/dashboards/logs/dashboard-sales.tmpl.html',
                     controller: 'DashboardSalesController',
-                    controllerAs: 'vm'
-                },
-                'belowContent': {
-                    templateUrl: 'app/sensor/dashboards/sales/fab-button.tmpl.html',
-                    controller: 'SalesFabController',
                     controllerAs: 'vm'
                 }
             }
-        })
+        })/*
         .state('triangular.dashboard-draggable', {
             url: '/dashboards/draggable-widgets',
             templateUrl: 'app/sensor/dashboards/dashboard-draggable.tmpl.html',
             controller: 'DashboardDraggableController',
             controllerAs: 'vm'
+        })*/
+        .state('triangular.dashboard-log', {
+            url: '/dashboards/session/:logID',
+            templateUrl: 'app/sensor/dashboards/log/log.tmpl.html',
+            controller: 'DashboardLogController',
+            controllerAs: 'vm'
         });
 
+        /*
+        .state('triangular.dashboard-log', {
+            url: '/dashboards/new-session',
+            templateUrl: 'app/sensor/dashboards/log/log.tmpl.html',
+            controller: 'DashboardLogController',
+            controllerAs: 'vm'
+        });
+        */
         triMenuProvider.addMenu({
             name: 'Dashboards',
             icon: 'zmdi zmdi-home',
@@ -112,8 +121,8 @@
                 state: 'triangular.dashboard-general',
                 type: 'link'
             },{
-                name: 'Sales',
-                state: 'triangular.dashboard-sales',
+                name: 'Sessions',
+                state: 'triangular.dashboard-logs',
                 type: 'link'
             },{
                 name: 'Classic',
@@ -123,7 +132,8 @@
                 name: 'Server',
                 state: 'triangular.dashboard-server',
                 type: 'link'
-            },{
+            }
+                /*{
                 name: 'Social',
                 state: 'triangular.dashboard-social',
                 type: 'link'
@@ -135,7 +145,7 @@
                 name: 'Draggable',
                 state: 'triangular.dashboard-draggable',
                 type: 'link'
-            }]
+            }*/]
         });
 
     }

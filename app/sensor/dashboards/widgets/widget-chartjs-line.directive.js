@@ -65,7 +65,10 @@
                     for(var label = 0; label < $scope.lineChart.labels.length; label++) {
                         row.push(Math.floor((Math.random() * 100) + 1));
                     }
+                    //console.log(row);
                     $scope.lineChart.data.push(row);
+
+                    //console.log($scope.lineChart.data);
                 }
             }
 

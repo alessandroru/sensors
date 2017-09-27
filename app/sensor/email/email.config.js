@@ -12,10 +12,6 @@
             state: 'triangular.email.trash',
             name: 'Trash',
             url: '/email/trash'
-        },{
-            state: 'triangular.email.sent',
-            name: 'Sent',
-            url: '/email/sent'
         }]);
 
     /* @ngInject */
@@ -43,6 +39,7 @@
         });
 
         angular.forEach(EMAIL_ROUTES, function(route) {
+
             $stateProvider
             .state(route.state, {
                 url: route.url,

@@ -1,0 +1,73 @@
+<div class="sales-dashboard">
+
+    <div flex="30" flex-sm="100" class="drag-container" layout="row" layout-margin dragula='"drag-server-container"'>
+
+        <md-button class="md-primary md-raised" ng-click="vm.newLog()" translate="Start new session"></md-button>
+
+
+        <tri-widget palette-background="triCyan:500" background="primary" content-layout="row" content-layout-align="space-between center" content-padding>
+            <div class="show-gt-md">
+                <md-icon class="font-size-5 opacity-50" md-font-icon="zmdi zmdi-gps-dot"></md-icon>
+            </div>
+            <div layout="column" layout-align="center end">
+                <p class="md-display-1 font-weight-100 margin-top-0 margin-bottom-0 text-ellipsis">192.168.1.1</p>
+                <p class="md-body-2 opacity-60 margin-top-0 margin-bottom-0" translate>Your IP Address</p>
+            </div>
+        </tri-widget>
+    </div>
+
+    <div layout="row" layout-xs="column" layout-margin>
+        <tri-widget flex title="Sessions" content-layout="column" content-layout-align="center">
+            <md-table-container>
+                <table md-table class="md-data-table">
+                    <thead md-head md-order="vm.query.order" md-on-reorder="vm.getUsers">
+                        <tr md-row>
+                            <th md-column>ID</th>
+                            <th md-column>Data start</th>
+                            <th md-column>Data stop</th>
+                            <th md-column>Duration</th>
+                            <th md-column>Title</th>
+
+                            <!--<th md-column>Details</th>-->
+
+                            <th md-column>Export in csv</th>
+                            <th md-column>Delete log</th>
+                        </tr>
+                    </thead>
+                    <tbody md-body>
+                        <tr md-row ng-repeat="log in vm.logsData | orderBy: vm.query.order | limitTo: vm.query.limit : (vm.query.page -1) * vm.query.limit">
+                        <!--<tr md-row ng-repeat="log in vm.logsData">-->
+                            <td md-cell>{{::log.id}}</td>
+                            <td md-cell>{{::log.start | amDateFormat:'MMMM Do YYYY, h:mm:ss a'}}</td>
+                            <td md-cell>{{::log.stop | amDateFormat:'MMMM Do YYYY, h:mm:ss a'}}</td>
+                            <td md-cell>{{::log.duration | amDateFormat:'MMMM Do YYYY, h:mm:ss a'}}</td>
+                            <td md-cell>{{::log.title}}</td>
+
+                            <!--<td md-cell>
+                                <md-button ng-click="vm.openLog(log, $event)" class="md-icon-button" aria-label="Open Log">
+                                    <md-icon md-font-icon="zmdi zmdi-search"></md-icon>
+                                </md-button>
+                            </td>-->
+
+
+
+                            <td md-cell class="export_log_cell">
+                                <md-button ng-click="vm.exportLog(log, $event)" class="md-icon-button" aria-label="Export Log">
+                                    <md-icon md-font-icon="zmdi zmdi-file-text"></md-icon>
+                                </md-button>
+                            </td>
+
+                            <td md-cell class="delete_log_cell">
+                                <md-button ng-click="vm.deleteLog(log, $event)" class="md-icon-button" aria-label="Delete Log">
+                                    <md-icon md-font-icon="zmdi zmdi-delete"></md-icon>
+                                </md-button>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </md-table-container>
+            <md-table-pagination md-limit="vm.query.limit" md-page="vm.query.page" md-total="{{vm.logsData.length}}" md-page-select></md-table-pagination>
+        </tri-widget>
+    </div>
+</div>

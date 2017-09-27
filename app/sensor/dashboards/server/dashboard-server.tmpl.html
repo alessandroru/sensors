@@ -1,12 +1,17 @@
 <div class="dashboard-container overlay-10 padded-content-page" layout="column">
     <div layout="row" layout-sm="column" layout-margin>
         <tri-widget flex="70" flex-sm="100" server-widget>
+
+
             <md-tabs layout-fill flex md-dynamic-height md-no-disconnect md-stretch-tabs="always" md-no-pagination>
                 <md-tab label="{{'Real Time' | triTranslate}}">
                     <md-content class="md-padding">
                         <h1 class="md-headline"><span translate>Bandwidth</span> <span class="md-caption">(Mbps)</span></h1>
+
                         <canvas flex class="chart-line" chart-data="serverCharts.bandwidth.data" chart-labels="serverCharts.bandwidth.labels" chart-legend="false" chart-options="serverCharts.bandwidth.options" chart-colours="serverCharts.bandwidth.colours"></canvas>
+
                         <h1 class="md-headline"><span translate>CPU</span> <span class="md-caption">(%)</span></h1>
+
                         <canvas flex class="chart-line" chart-data="serverCharts.cpu.data" chart-labels="serverCharts.cpu.labels" chart-legend="false" chart-options="serverCharts.cpu.options" chart-colours="serverCharts.cpu.colours"></canvas>
                     </md-content>
                 </md-tab>
@@ -26,6 +31,9 @@
                     </md-content>
                 </md-tab>
             </md-tabs>
+
+
+
         </tri-widget>
         <div flex="30" flex-sm="100" class="drag-container" layout="column" layout-margin dragula='"drag-server-container"'>
             <tri-widget palette-background="triCyan:500" background="primary" content-layout="row" content-layout-align="space-between center" content-padding>

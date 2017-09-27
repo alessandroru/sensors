@@ -3,19 +3,25 @@
 
     angular
         .module('app.sensor.dashboards')
-        .factory('SalesService', SalesService);
+        .factory('LogService', LogService);
 
     /* @ngInject */
-    function SalesService() {
+    function LogService() {
         return {
-            generateSales: generateSales,
-            createLineChartData: createLineChartData,
-            createPieChartData: createPieChartData,
-            createBarChartData: createBarChartData
+            getLogs: getLogs,
+            //createLineChartData: createLineChartData,
+            //createPieChartData: createPieChartData,
+            //createBarChartData: createBarChartData
         };
 
-        ////////////////
 
+        function getLogs(){
+
+        }
+
+
+        ////////////////
+        /*
         function generateSales(dateRange) {
             var salesData = {
                 totalSales: 0,
@@ -44,7 +50,8 @@
 
             return salesData;
         }
-
+        */
+        /*
         function generateOrders(numOrders, date) {
             var ordersData = {
                 orders: [],
@@ -58,32 +65,37 @@
 
             return ordersData;
         }
-
+        */
+        /*
         function generateOrder(date) {
             var statuses = ['complete', 'pending', 'delivered'];
-            var names = ['Loraine Heidenreich', 'Amie Hane', 'Rosalyn Heller V', 'Dr. Kristian Boyle II', 'Clarabelle Weber', 'Rowland Emard', 'Kitty Heller DVM', 'Winston Frami', 'Newton Welch', 'Trudie Feest', 'Vivien Sauer', 'Cleta Kuhn', 'Ruby Shields', 'Dr. Moises Beahan DDS', 'Miss Shanel Jenkins DVM', 'Kitty Heller DVM', 'Vivien Sauer', 'Clara Cremin', 'Eunice Morissette', 'Arch Sporer IV', 'Miss Shanel Jenkins DVM', 'Ryann Balistreri I', 'Norma Yost DDS', 'Manley Roberts', 'Ruby Shields', 'Miss Lavada Runolfsson', 'Kira Dooley', 'Meredith Ebert DDS'];
-            var emails = ['johnson.althea@gleichner.net','will.rhea@weber.biz','roslyn75@keebler.com','okon.glenda@hamill.com','estroman@cruickshank.org','victoria41@hartmann.com','bogisich.janice@wilkinson.com','bryce97@kris.com','noe59@king.com','wiza.litzy@kozey.com','oconner.cortney@gmail.com','kub.fannie@hotmail.com','adrian00@gutkowski.com','justice69@yahoo.com','torphy.toney@yahoo.com','bogisich.janice@wilkinson.com','oconner.cortney@gmail.com','orval63@gmail.com','jaime94@gmail.com','olaf69@okeefe.com','torphy.toney@yahoo.com','bernhard.bruen@marvin.com','otilia61@hotmail.com','bogan.lelia@bins.info','adrian00@gutkowski.com','yazmin76@hotmail.com','kglover@hotmail.com','erick.hermann@larkin.net','bernhard.bruen@marvin.com','bradly90@corkery.info','orval63@gmail.com','olaf69@okeefe.com'];
+
+            var titles = ['Sessione n1','Sessione n2','Sessione n3','Sessione n4','Sessione n5','Sessione n6','Sessione n7','Sessione n8','Sessione n9','Sessione n10','Sessione n11','Sessione n12','Sessione n13','Sessione n14'];
+
+
+            var durata = ['1234','1234','1234','1234','1234','1234','1234','1234','1234','1234','1234','1234','1234','1234'];
             var order = {
                 id: makeid(),
-                buyer: emails[Math.floor(Math.random() * emails.length)],
-                name: names[Math.floor(Math.random() * names.length)],
+                durata: durata[Math.floor(Math.random() * durata.length)],
+                titolo: titles[Math.floor(Math.random() * titles.length)],
                 date: moment(date + Math.floor(Math.random() * (86400000 - 0)) + 0),
-                items: [],
-                subTotal: 0,
-                status: statuses[Math.floor(Math.random() * statuses.length)],
-                tax: 0,
-                total: 0
+                items: []
+                //subTotal: 0,
+                //status: statuses[Math.floor(Math.random() * statuses.length)],
+                //tax: 0,
+                //total: 0
             };
 
-            var numItems = Math.floor(Math.random() * (6 - 1)) + 1;
+            var numItems = 10;
             var productAdjectives = ['Super', 'Amazing', 'Great', 'New'];
             var productTypes = ['T-Shirt', 'Book', 'Desk', 'Coat', 'Chair', 'Hat', 'Jeans'];
             var productColors = ['Red', 'Green', 'Blue', 'Pink', 'Yellow', 'Orange'];
             var productCategories = ['Books', 'Electronics', 'Home', 'Toys', 'Clothes', 'Shoes', 'Mobiles'];
+
             for(var i = 0; i < numItems; i++) {
                 var item = {
-                    name: productAdjectives[Math.floor(Math.random() * productAdjectives.length)] + ' ' + productColors[Math.floor(Math.random() * productColors.length)] + ' ' + productTypes[Math.floor(Math.random() * productTypes.length)],
-                    category: productCategories[Math.floor(Math.random() * productCategories.length)],
+                    name: productAdjectives[0] + ' ' + productColors[0] + ' ' + productTypes[0],
+                    category: productCategories[0],
                     price: (Math.random() * (100 - 1) + 1).toFixed(2)
                 };
                 order.subTotal += parseFloat(item.price);
@@ -91,11 +103,16 @@
                 order.items.push(item);
             }
 
+
             order.tax = order.subTotal * 0.2;
             order.total += order.subTotal + order.tax;
+
             return order;
         }
+        */
 
+
+        /*
         function createLineChartData(salesData) {
             var chartData = {
                 labels: [],
@@ -165,6 +182,7 @@
             chartData.data.push(row);
             return chartData;
         }
+        */
 
         function makeid() {
             var text = '';
@@ -176,5 +194,6 @@
 
             return text;
         }
+
     }
 })();
